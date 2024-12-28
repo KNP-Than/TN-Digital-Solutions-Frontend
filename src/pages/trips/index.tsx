@@ -98,7 +98,7 @@ export const IndexTrips: React.FC = () => {
                             หมวด:{" "}
                             {item.tags.map((tag: string, index: number) => (
                               <Button
-                              size="small"
+                                size="small"
                                 type="link"
                                 className="text-gray-500 underline pl-1"
                                 onClick={() => onClickTag(tag)}
@@ -108,13 +108,14 @@ export const IndexTrips: React.FC = () => {
                               </Button>
                             ))}
                           </div>
-                          <div className="grid grid-cols-3 gap-4 mt-6">
+                          <div className="grid grid-cols-3 gap-4 mt-6 hidden sm:grid">
                             {item.photos.map((photo: string, index: number) => {
                               if (index > 0) {
                                 return (
                                   <img
+                                    key={index}
                                     src={photo}
-                                    alt={`Thumbnail ${index}`}
+                                    alt={`${photo}`}
                                     className="w-full h-auto object-cover rounded-lg shadow-md"
                                   />
                                 );
